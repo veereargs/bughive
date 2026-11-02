@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile | BugHive</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <main class="container">
+        <div class="page-head"><h1>My Profile</h1></div>
+        <div class="grid grid-2">
+            <div class="card">
+                <div class="flex">
+                    <div id="bigAvatar"></div>
+                    <div>
+                        <h2 id="pName"></h2>
+                        <p class="muted" id="pEmail"></p>
+                        <div id="pRole"></div>
+                    </div>
+                </div>
+                <form id="profileForm" class="mt">
+                    <div class="form-group"><label>Display name</label><input id="nameInput" required minlength="2" maxlength="50"></div>
+                    <button class="btn btn-primary" type="submit">Update profile</button>
+                </form>
+            </div>
+
+            <div class="card">
+                <h3>Change password</h3>
+                <form id="passwordForm" class="mt">
+                    <div class="form-group"><label>Current password</label><input type="password" id="currentPassword" required></div>
+                    <div class="form-group"><label>New password</label><input type="password" id="newPassword" required minlength="6"></div>
+                    <button class="btn btn-primary" type="submit">Change password</button>
+                </form>
+            </div>
+        </div>
+    </main>
+    <script src="/js/common.js"></script>
+    <script src="/js/profile.js"></script>
+</body>
+</html>

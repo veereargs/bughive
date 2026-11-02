@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard | BugHive</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <main class="container">
+        <div class="page-head">
+            <div>
+                <h1 id="welcome">Dashboard</h1>
+                <p class="muted">Here is what is happening across your projects.</p>
+            </div>
+            <a href="/issues.html" class="btn btn-primary">+ New Issue</a>
+        </div>
+
+        <div class="grid grid-4" id="statCards"></div>
+
+        <div class="grid grid-3 mt">
+            <div class="card"><h3>By Status</h3><div id="statusBars"></div></div>
+            <div class="card"><h3>By Priority</h3><div id="priorityBars"></div></div>
+            <div class="card"><h3>By Type</h3><div id="typeBars"></div></div>
+        </div>
+
+        <div class="grid grid-2 mt">
+            <div class="card"><h3>Issues created (last 7 days)</h3><div class="trend" id="trend"></div></div>
+            <div class="card"><h3>Recent issues</h3><div id="recent"></div></div>
+        </div>
+    </main>
+    <script src="/js/common.js"></script>
+    <script src="/js/dashboard.js"></script>
+</body>
+</html>

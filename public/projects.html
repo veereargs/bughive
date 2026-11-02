@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects | BugHive</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <main class="container">
+        <div class="page-head">
+            <div>
+                <h1>Projects</h1>
+                <p class="muted">Workspaces you own or have been invited to.</p>
+            </div>
+            <button class="btn btn-primary" id="newProjectBtn">+ New Project</button>
+        </div>
+        <div class="grid grid-3" id="projectGrid"></div>
+    </main>
+
+    <!-- Create project modal -->
+    <div class="modal" id="createModal">
+        <div class="modal-box">
+            <h2>New Project</h2>
+            <form id="createForm">
+                <div class="form-group"><label>Project name</label><input id="pName" required maxlength="60" placeholder="Website Redesign"></div>
+                <div class="form-group"><label>Key (2-5 letters, used in issue codes like WEB-1)</label><input id="pKey" required maxlength="5" placeholder="WEB" style="text-transform:uppercase"></div>
+                <div class="form-group"><label>Description</label><textarea id="pDesc" maxlength="300" placeholder="What is this project about?"></textarea></div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-ghost" data-close="createModal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Manage project modal -->
+    <div class="modal" id="manageModal">
+        <div class="modal-box" id="manageBox"></div>
+    </div>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/projects.js"></script>
+</body>
+</html>

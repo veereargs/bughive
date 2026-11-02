@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Issues | BugHive</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div id="navbar"></div>
+    <main class="container">
+        <div class="page-head">
+            <div>
+                <h1>Issues</h1>
+                <p class="muted">Drag cards on the board to change their status.</p>
+            </div>
+            <div class="flex">
+                <div class="toggle">
+                    <button id="boardBtn" class="active">Board</button>
+                    <button id="listBtn">List</button>
+                </div>
+                <button class="btn btn-primary" id="newIssueBtn">+ New Issue</button>
+            </div>
+        </div>
+
+        <div class="filters">
+            <select id="fProject"></select>
+            <select id="fStatus">
+                <option value="">All status</option>
+                <option value="todo">To Do</option>
+                <option value="in-progress">In Progress</option>
+                <option value="in-review">In Review</option>
+                <option value="done">Done</option>
+            </select>
+            <select id="fPriority">
+                <option value="">All priority</option>
+                <option>low</option><option>medium</option><option>high</option><option>critical</option>
+            </select>
+            <select id="fType">
+                <option value="">All types</option>
+                <option>bug</option><option>feature</option><option>task</option>
+            </select>
+            <input type="search" id="fSearch" placeholder="Search title, code, label...">
+            <label class="check"><input type="checkbox" id="fMine"> Assigned to me</label>
+        </div>
+
+        <div id="boardView"><div class="board" id="board"></div></div>
+
+        <div id="listView" style="display:none">
+            <div class="card table-wrap">
+                <table>
+                    <thead>
+                        <tr><th>Code</th><th>Title</th><th>Type</th><th>Priority</th><th>Status</th><th>Assignee</th><th>Due</th></tr>
+                    </thead>
+                    <tbody id="listBody"></tbody>
+                </table>
+            </div>
+            <div class="pagination">
+                <button class="btn btn-ghost btn-sm" id="prevBtn">&laquo; Prev</button>
+                <span id="pageInfo" class="muted"></span>
+                <button class="btn btn-ghost btn-sm" id="nextBtn">Next &raquo;</button>
+            </div>
+        </div>
+    </main>
+
+    <!-- Create issue modal -->
+    <div class="modal" id="issueModal">
+        <div class="modal-box">
+            <h2>New Issue</h2>
+            <form id="issueForm">
+                <div class="form-group"><label>Project</label><select id="nProject" required></select></div>
+                <div class="form-group"><label>Title</label><input id="nTitle" required maxlength="120" placeholder="Short summary of the issue"></div>
+                <div class="form-group"><label>Description</label><textarea id="nDesc" maxlength="2000" placeholder="Steps to reproduce, expected result..."></textarea></div>
+                <div class="form-row">
+                    <div class="form-group"><label>Type</label><select id="nType"><option>bug</option><option>feature</option><option selected>task</option></select></div>
+                    <div class="form-group"><label>Priority</label><select id="nPriority"><option>low</option><option selected>medium</option><option>high</option><option>critical</option></select></div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group"><label>Assignee</label><select id="nAssignee"><option value="">Unassigned</option></select></div>
+                    <div class="form-group"><label>Due date</label><input type="date" id="nDue"></div>
+                </div>
+                <div class="form-group"><label>Labels (comma separated)</label><input id="nLabels" placeholder="ui, mobile"></div>
+                <div class="modal-actions">
+                    <button type="button" class="btn btn-ghost" data-close="issueModal">Cancel</button>
+                    <button type="submit" class="btn btn-primary">Create Issue</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="/js/common.js"></script>
+    <script src="/js/issues.js"></script>
+</body>
+</html>
